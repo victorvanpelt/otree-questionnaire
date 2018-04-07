@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+
+<div class="instructions" style="background-color: rgb(247,247,247)">
+        In this questionnaire, you will be asked to evaluate statements and answer a few questions.
+</div>
+
+    {% next_button %}
+
+{% endblock %}

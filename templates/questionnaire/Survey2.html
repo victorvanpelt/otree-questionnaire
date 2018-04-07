@@ -1,0 +1,29 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+
+    <div class="instructions" style="text-align:center">
+    <b>
+        Please rate several statements reflecting general feelings and experiences that may or may not apply to you.
+    </b>
+    </div>
+     <table class="table">
+    {% for field in form %}
+        <tr>
+            <td>
+                {{ field.label }}
+            </td>
+            <td>
+                {{ field }}
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+    {% next_button %}
+
+{% endblock %}
