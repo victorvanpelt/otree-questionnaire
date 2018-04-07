@@ -1,4 +1,4 @@
-## Questionnaire for oTree
+## Basic Questionnaire for oTree
 
 This is a basic questionnaire that can be executed after or before other applications in oTree.
 It includes four pages which are located under templates:
