@@ -8,9 +8,12 @@ It includes four pages which are located under templates:
 - Survey2.html
 - Demographics.html
 
-The questionnaire always starts with Introduction.html, and always ends with a Demographics.html.  
-Between these two pages, the application randomizes other pages included under templates as "Survey*.html" and incorporated in models.py and pages.py.  
-The order of items and questions on every page are also randomized.
+The questionnaire always starts with Introduction.html, and always ends with a Demographics.html.
+Between these two pages, the application randomizes other pages included under templates as "Survey*.html" and incorporated in models.py and pages.py.
+The order of items and questions on every page are also randomized.  
+  
+The questionnaire was created on oTree version 2.0.29.  
+You can test the application [here](https://otree-questionnaire.herokuapp.com) by choosing "Questionnaire".
 
 ## Adding a page
 Below are basic instructions to include a another page (i.e., Survey3.html).
@@ -31,7 +34,3 @@ initial_page_sequence = [
     Survey3,
 ]
 ```
-
-## Other information
-The questionnaire was created on oTree version 2.0.29.  
-You can test the application [here](https://otree-questionnaire.herokuapp.com) by choosing "Questionnaire".
