@@ -1,6 +1,6 @@
 ## Basic Questionnaire for oTree
 
-This is a basic questionnaire that can be executed after or before other applications in oTree.
+This is a basic questionnaire that can be executed after or before other applications in [oTree](http://www.otree.org/), an open-source Python framework for experimental and survey research.
 It includes four pages which are located under templates:
 
 - Introduction.html
