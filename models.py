@@ -35,10 +35,7 @@ class Constants(BaseConstants):
 
 class Subsession(BaseSubsession):
     pass
-    #def randomize_page_order(self):
-    #def creating_session(self):
-    #    pages_names = ['Survey1', 'Survey2']
-    #    random.shuffle(pages_names)
+
     def creating_session(self):
         from .pages import initial_page_sequence
         aaa = [i.__name__.split('_') for i in initial_page_sequence]
@@ -69,18 +66,8 @@ class Player(BasePlayer):
 
     age = models.IntegerField(label="Please enter your age.", min=14, max=90, blank=True)
 
-    nationality = models.IntegerField(
-        label="Please select what best describes your nationality.",
-        choices=[
-            [1, 'Dutch'],
-            [2, 'Other European nationality than Dutch'],
-            [3, 'Other nationality than a European nationality'],
-            [4, 'I prefer not to say.'],
-        ]
-    )
-
     studies = models.IntegerField(
-        label="Please estimate how many studies you have participated in since you started studying at this university (excluding this study)",
+        label="Please estimate how many studies you have participated in (excluding this study)",
         choices=[
             [1, 'Less than 5 studies'],
             [2, 'Between 5 and less than 10 studies.'],
@@ -105,14 +92,15 @@ class Player(BasePlayer):
     )
 
     degree = models.IntegerField(
-        label="Please indicate which degree you are currently pursuing. If you are currently pursuing more than one degree, please select the highest degree.",
+        label="Please indicate the highest academic degree you have completed. If you are currently actively pursuing one, please select that academic degree.",
         choices=[
-            [1, 'Bachelor degree'],
-            [2, 'Master degree'],
-            [3, 'PhD degree'],
-            [4, 'MBA degree'],
-            [5, 'Other'],
-            [6, 'I prefer not to say.']
+            [1, 'High school or lower'],
+            [2, 'Bachelor degree'],
+            [3, 'Master degree'],
+            [4, 'PhD degree'],
+            [5, 'MBA degree'],
+            [6, 'Other'],
+            [7, 'I prefer not to say.']
         ]
     )
 
@@ -125,77 +113,77 @@ class Player(BasePlayer):
     )
 
     #Survey1
-    grit1 = models.IntegerField(
-        label='I often set a goal but later choose to pursue a different one.',
+    item1A = models.IntegerField(
+        label='Statement 1A',
         choices=Constants.Survey1Choices
     )
-    grit2 = models.IntegerField(
-        label='I have been obsessed with a certain idea or project for a short time but later lost interest.',
+    item1B = models.IntegerField(
+        label='Statement 1B',
         choices=Constants.Survey1Choices
     )
-    grit3 = models.IntegerField(
-        label='I have difficulty maintaining my focus on projects that take more than a few months to complete.',
+    item1C = models.IntegerField(
+        label='Statement 1C',
         choices=Constants.Survey1Choices
     )
-    grit4 = models.IntegerField(
-        label='New ideas and projects sometimes distract me from previous ones.',
+    item1D = models.IntegerField(
+        label='Statement 1D',
         choices=Constants.Survey1Choices
     )
-    grit5 = models.IntegerField(
-        label='I finish whatever I begin.',
+    item1E = models.IntegerField(
+        label='Statement 1E',
         choices=Constants.Survey1Choices
     )
-    grit6 = models.IntegerField(
-        label='Setbacks do not discourage me.',
+    item1F = models.IntegerField(
+        label='Statement 1F',
         choices=Constants.Survey1Choices
     )
-    grit7 = models.IntegerField(
-        label='I am diligent (hardworking).',
+    item1G = models.IntegerField(
+        label='Statement 1G',
         choices=Constants.Survey1Choices
     )
-    grit8 = models.IntegerField(
-        label='I am a hard worker.',
+    item1H = models.IntegerField(
+        label='Statement 1H',
         choices=Constants.Survey1Choices
     )
 
     #Survey2
-    big1 = models.IntegerField(
-        label='I see myself as extraverted, enthusiastic.',
+    item2A = models.IntegerField(
+        label='Statement 2A',
         choices=Constants.Survey2Choices
     )
-    big2 = models.IntegerField(
-        label='I see myself as critical, quarrelsome.',
+    item2B = models.IntegerField(
+        label='Statement 2B',
         choices=Constants.Survey2Choices
     )
-    big3 = models.IntegerField(
-        label='I see myself as dependable, self-disciplined.',
+    item2C = models.IntegerField(
+        label='Statement 2C',
         choices=Constants.Survey2Choices
     )
-    big4 = models.IntegerField(
-        label='I see myself as anxious, easily upset.',
+    item2D = models.IntegerField(
+        label='Statement 2D',
         choices=Constants.Survey2Choices
     )
-    big5 = models.IntegerField(
-        label='I see myself as open to new experiences, complex.',
+    item2E = models.IntegerField(
+        label='Statement 2E',
         choices=Constants.Survey2Choices
     )
-    big6 = models.IntegerField(
-        label='I see myself as reserved, quiet.',
+    item2F = models.IntegerField(
+        label='Statement 2F',
         choices=Constants.Survey2Choices
     )
-    big7 = models.IntegerField(
-        label='I see myself as sympathetic, warm.',
+    item2G = models.IntegerField(
+        label='Statement 2G',
         choices=Constants.Survey2Choices
     )
-    big8 = models.IntegerField(
-        label='I see myself as disorganized, careless.',
+    item2H = models.IntegerField(
+        label='Statement 2H',
         choices=Constants.Survey2Choices
     )
-    big9 = models.IntegerField(
-        label='I see myself as calm, emotionally stable.',
+    item2I = models.IntegerField(
+        label='Statement 2I',
         choices=Constants.Survey2Choices
     )
-    big10 = models.IntegerField(
-        label='I see myself as conventional, uncreative.',
+    item2J = models.IntegerField(
+        label='Statement 2J',
         choices=Constants.Survey2Choices
     )

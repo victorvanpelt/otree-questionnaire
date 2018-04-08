@@ -10,24 +10,24 @@ class Introduction(Page):
 class Survey1(Page):
     form_model = 'player'
     form_fields = [
-        'grit1',
-        'grit2',
-        'grit3',
-        'grit4',
-        'grit5',
-        'grit6',
-        'grit7',
-        'grit8',
+        'item1A',
+        'item1B',
+        'item1C',
+        'item1D',
+        'item1E',
+        'item1F',
+        'item1G',
+        'item1H'
     ]
     form_labels = [
-        'grit1',
-        'grit2',
-        'grit3',
-        'grit4',
-        'grit5',
-        'grit6',
-        'grit7',
-        'grit8',
+        'item1A',
+        'item1B',
+        'item1C',
+        'item1D',
+        'item1E',
+        'item1F',
+        'item1G',
+        'item1H'
     ]
 
     def get_form_fields(self):
@@ -38,28 +38,28 @@ class Survey1(Page):
 class Survey2(Page):
     form_model = 'player'
     form_fields = [
-        'big1',
-        'big2',
-        'big3',
-        'big4',
-        'big5',
-        'big6',
-        'big7',
-        'big8',
-        'big9',
-        'big10',
+        'item2A',
+        'item2B',
+        'item2C',
+        'item2D',
+        'item2E',
+        'item2F',
+        'item2G',
+        'item2H',
+        'item2I',
+        'item2J'
     ]
     form_labels = [
-        'big1',
-        'big2',
-        'big3',
-        'big4',
-        'big5',
-        'big6',
-        'big7',
-        'big8',
-        'big9',
-        'big10',
+        'item2A',
+        'item2B',
+        'item2C',
+        'item2D',
+        'item2E',
+        'item2F',
+        'item2G',
+        'item2H',
+        'item2I',
+        'item2J'
     ]
 
     def get_form_fields(self):
@@ -69,7 +69,7 @@ class Survey2(Page):
 
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['gender', 'age', 'nationality', 'studies', 'workexperience', 'degree', 'english']
+    form_fields = ['gender', 'age', 'studies', 'workexperience', 'degree', 'english']
 
     def get_form_fields(self):
         fields = self.form_fields
