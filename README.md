@@ -13,17 +13,17 @@ Between these two pages, the application randomizes other pages included under t
 The order of items and questions on every page are also randomized.
 
 ## Adding a page
-Below are basic instructions to quick include a another page (i.e., Survey3.html).
+Below are basic instructions to include a another page (i.e., Survey3.html).
 
 ### templates/questionnaire/
-Copy/paste "Survey2.html" and rename it to "Survey3.html" under /templates/questionnaire/
+Copy/paste "Survey2.html" and rename it to "Survey3.html" under /templates/questionnaire/.
 
 ### models.py
-In models.py add your questions and items to the Player class. Make sure to specify a label and choices if required.
+In models.py, add your questions and items to the Player class. Make sure to specify a label and choice information.
 
 ### pages.py
-In pages.py copy/paste the Survey2 class and rename this new class to Survey3.
-Also add Survey3 to "initial_page_sequence":
+In pages.py, copy/paste the Survey2 class and rename this new class to Survey3.  
+Also, add Survey3 to "initial_page_sequence":  
 ```python
 initial_page_sequence = [
     Survey1,
