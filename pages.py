@@ -4,8 +4,16 @@ from .models import Constants
 import random
 import json
 
+def vars_for_all_templates(self):
+    progress = self.progress()
+    return {
+        'progress': progress
+    }
+
 class Introduction(Page):
-    pass
+    def progress(self):
+        progress = self._index_in_pages / tot_pages * 100
+        return progress
 
 class Survey1(Page):
     form_model = 'player'
@@ -34,6 +42,10 @@ class Survey1(Page):
         fields = self.form_fields
         random.shuffle(fields)
         return fields
+
+    def progress(self):
+        progress = self._index_in_pages / tot_pages * 100
+        return progress
 
 class Survey2(Page):
     form_model = 'player'
@@ -67,6 +79,10 @@ class Survey2(Page):
         random.shuffle(fields)
         return fields
 
+    def progress(self):
+        progress = self._index_in_pages / tot_pages * 100
+        return progress
+
 class Demographics(Page):
     form_model = 'player'
     form_fields = ['gender', 'age', 'studies', 'workexperience', 'degree', 'english']
@@ -75,6 +91,10 @@ class Demographics(Page):
         fields = self.form_fields
         random.shuffle(fields)
         return fields
+
+    def progress(self):
+        progress = self._index_in_pages / tot_pages * 100
+        return progress
 
 start_pages = [
     Introduction
@@ -100,6 +120,9 @@ class MyPage(Page):
         self.__class__ = globals()[page_to_show]
         return super(globals()[page_to_show], self).inner_dispatch()
 
+    def progress(self):
+        progress = self._index_in_pages / tot_pages * 100
+        return progress
 
 for i, _ in enumerate(initial_page_sequence):
     NewClassName = "Survey_{}".format(i)
@@ -108,3 +131,4 @@ for i, _ in enumerate(initial_page_sequence):
     page_sequence.append(locals()[NewClassName])
 
 page_sequence = start_pages + page_sequence + end_pages
+tot_pages = len(start_pages)+len(initial_page_sequence)+len(end_pages)

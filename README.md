@@ -16,7 +16,7 @@ The questionnaire was created on oTree version 2.0.29.
 You can test the application [here](https://otree-questionnaire.herokuapp.com) by choosing "Questionnaire".
 
 ## Adding a page
-Below are basic instructions to include a another page (i.e., Survey3.html).
+Below are basic instructions to include another page (i.e., Survey3.html).
 
 ### templates/questionnaire/
 Copy/paste "Survey2.html" and rename it to "Survey3.html" under /templates/questionnaire/.
