@@ -1,7 +1,7 @@
 ## Basic Questionnaire for oTree
 
-This is a basic questionnaire that can be executed after or before other applications in [oTree](http://www.otree.org/), an open-source Python framework for experimental and survey research.
-It includes four pages which are located under templates:
+This is a basic questionnaire with page and question randomization that can be executed after or before other applications in [oTree](http://www.otree.org/), an open-source Python framework for experimental and survey research.
+It includes four pages which are located under templates/questionnaire/:
 
 - Introduction.html
 - Survey1.html
@@ -15,8 +15,8 @@ The order of items and questions on every page are also randomized.
 The questionnaire was created on oTree version 2.0.29.  
 You can test the application [here](https://otree-questionnaire.herokuapp.com) by choosing "Questionnaire".
 
-## Adding a page
-Below are basic instructions to include another page (i.e., Survey3.html).
+## Adding another page with questions
+Below are simple instructions to include another page (i.e., Survey3.html).
 
 ### templates/questionnaire/
 Copy/paste "Survey2.html" and rename it to "Survey3.html" under /templates/questionnaire/.
