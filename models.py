@@ -9,7 +9,7 @@ import json
 author = 'Victor van Pelt'
 
 doc = """
-Demo of o-Tree Questionnaire
+Basic o-Tree Questionnaire
 """
 
 

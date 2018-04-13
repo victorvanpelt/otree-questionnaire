@@ -19,12 +19,12 @@
         </tr>
     {% endfor %}
     </table>
-
+    <hr>
     {% next_button %}
 
     <div class="progress" style="height: 30px;">
     <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" style="width:{{progress|json}}%; text-align:center">
-    <span style="font-size:12pt;">{{ progress|floatformat }}%</span>
+    <span style="font-size:12pt;">{{ progress|floatformat:0 }}%</span>
     </div>
     </div>
 
