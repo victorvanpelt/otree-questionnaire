@@ -45,7 +45,7 @@ class Subsession(BaseSubsession):
             random.shuffle(pb)
             level1 = list(itertools.chain.from_iterable(pb))
             level2 = ['_'.join(i) for i in level1]
-            p.participant.vars['page_sequence'] = json.dumps(level2)
+            p.participant.vars['initial_page_sequence'] = json.dumps(level2)
 
 class Group(BaseGroup):
     pass

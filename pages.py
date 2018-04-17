@@ -11,9 +11,11 @@ def vars_for_all_templates(self):
     }
 
 class Introduction(Page):
+
     def progress(self):
-        progress = self._index_in_pages / tot_pages * 100
-        return progress
+            curpageindex = page_sequence.index(type(self))+1
+            progress = curpageindex / tot_pages * 100
+            return progress
 
 class Survey1(Page):
     form_model = 'player'
@@ -44,7 +46,8 @@ class Survey1(Page):
         return fields
 
     def progress(self):
-        progress = self._index_in_pages / tot_pages * 100
+        curpageindex = json.loads(self.participant.vars.get('initial_page_sequence')).index(str(self.__class__.__name__)) + len(end_pages) + len(start_pages)
+        progress = curpageindex / tot_pages * 100
         return progress
 
 class Survey2(Page):
@@ -80,7 +83,8 @@ class Survey2(Page):
         return fields
 
     def progress(self):
-        progress = self._index_in_pages / tot_pages * 100
+        curpageindex = json.loads(self.participant.vars.get('initial_page_sequence')).index(str(self.__class__.__name__)) + len(end_pages) + len(start_pages)
+        progress = curpageindex / tot_pages * 100
         return progress
 
 class Demographics(Page):
@@ -93,7 +97,8 @@ class Demographics(Page):
         return fields
 
     def progress(self):
-        progress = self._index_in_pages / tot_pages * 100
+        curpageindex = page_sequence.index(type(self)) + 1
+        progress = curpageindex / tot_pages * 100
         return progress
 
 start_pages = [
@@ -119,10 +124,6 @@ class MyPage(Page):
         page_to_show = json.loads(self.participant.vars.get('page_sequence'))[page_seq]
         self.__class__ = globals()[page_to_show]
         return super(globals()[page_to_show], self).inner_dispatch()
-
-    def progress(self):
-        progress = self._index_in_pages / tot_pages * 100
-        return progress
 
 for i, _ in enumerate(initial_page_sequence):
     NewClassName = "Survey_{}".format(i)
