@@ -33,6 +33,9 @@ class Constants(BaseConstants):
     #Survey2
     Survey2Choices=StandardChoices
 
+    #Survey3
+    Survey3Choices=StandardChoices
+
 class Subsession(BaseSubsession):
     pass
 
@@ -186,4 +189,46 @@ class Player(BasePlayer):
     item2J = models.IntegerField(
         label='Statement 2J',
         choices=Constants.Survey2Choices
+    )
+
+    #Survey3
+    item3A = models.IntegerField(
+        label='Statement 3A',
+        choices=Constants.Survey3Choices
+    )
+    item3B = models.IntegerField(
+        label='Statement 3B',
+        choices=Constants.Survey3Choices
+    )
+    item3C = models.IntegerField(
+        label='Statement 3C',
+        choices=Constants.Survey3Choices
+    )
+    item3D = models.IntegerField(
+        label='Statement 3D',
+        choices=Constants.Survey3Choices
+    )
+    item3E = models.IntegerField(
+        label='Statement 3E',
+        choices=Constants.Survey3Choices
+    )
+    item3F = models.IntegerField(
+        label='Statement 3F',
+        choices=Constants.Survey3Choices
+    )
+    item3G = models.IntegerField(
+        label='Statement 3G',
+        choices=Constants.Survey3Choices
+    )
+    item3H = models.IntegerField(
+        label='Statement 3H',
+        choices=Constants.Survey3Choices
+    )
+    item3I = models.IntegerField(
+        label='Statement 3I',
+        choices=Constants.Survey3Choices
+    )
+    item3J = models.IntegerField(
+        label='Statement 3J',
+        choices=Constants.Survey3Choices
     )

@@ -13,9 +13,9 @@ def vars_for_all_templates(self):
 class Introduction(Page):
 
     def progress(self):
-            curpageindex = page_sequence.index(type(self))+1
-            progress = curpageindex / tot_pages * 100
-            return progress
+        curpageindex = page_sequence.index(type(self))-1
+        progress = curpageindex / tot_pages * 100
+        return progress
 
 class Survey1(Page):
     form_model = 'player'
@@ -46,7 +46,7 @@ class Survey1(Page):
         return fields
 
     def progress(self):
-        curpageindex = json.loads(self.participant.vars.get('initial_page_sequence')).index(str(self.__class__.__name__)) + len(end_pages) + len(start_pages)
+        curpageindex = json.loads(self.participant.vars.get('initial_page_sequence')).index(str(self.__class__.__name__)) + 1
         progress = curpageindex / tot_pages * 100
         return progress
 
@@ -83,7 +83,44 @@ class Survey2(Page):
         return fields
 
     def progress(self):
-        curpageindex = json.loads(self.participant.vars.get('initial_page_sequence')).index(str(self.__class__.__name__)) + len(end_pages) + len(start_pages)
+        curpageindex = json.loads(self.participant.vars.get('initial_page_sequence')).index(str(self.__class__.__name__)) + 1
+        progress = curpageindex / tot_pages * 100
+        return progress
+
+class Survey3(Page):
+    form_model = 'player'
+    form_fields = [
+        'item3A',
+        'item3B',
+        'item3C',
+        'item3D',
+        'item3E',
+        'item3F',
+        'item3G',
+        'item3H',
+        'item3I',
+        'item3J'
+    ]
+    form_labels = [
+        'item3A',
+        'item3B',
+        'item3C',
+        'item3D',
+        'item3E',
+        'item3F',
+        'item3G',
+        'item3H',
+        'item3I',
+        'item3J'
+    ]
+
+    def get_form_fields(self):
+        fields = self.form_fields
+        random.shuffle(fields)
+        return fields
+
+    def progress(self):
+        curpageindex = json.loads(self.participant.vars.get('initial_page_sequence')).index(str(self.__class__.__name__)) + 1
         progress = curpageindex / tot_pages * 100
         return progress
 
@@ -97,7 +134,7 @@ class Demographics(Page):
         return fields
 
     def progress(self):
-        curpageindex = page_sequence.index(type(self)) + 1
+        curpageindex = page_sequence.index(type(self))
         progress = curpageindex / tot_pages * 100
         return progress
 
@@ -112,6 +149,7 @@ end_pages = [
 initial_page_sequence = [
     Survey1,
     Survey2,
+    Survey3,
 ]
 
 page_sequence = [
@@ -132,4 +170,4 @@ for i, _ in enumerate(initial_page_sequence):
     page_sequence.append(locals()[NewClassName])
 
 page_sequence = start_pages + page_sequence + end_pages
-tot_pages = len(start_pages)+len(initial_page_sequence)+len(end_pages)
+tot_pages = len(initial_page_sequence)+len(end_pages)
