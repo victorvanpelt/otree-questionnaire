@@ -15,7 +15,7 @@ The order of items and questions on every page are also randomized.
 The questionnaire also includes a progress bar that starts counting after the instruction page.
 
 The questionnaire was created on oTree version 2.0.29.  
-You can test the application [here](https://otree-questionnaire.herokuapp.com/demo/Questionnaire/).
+You can test the application [here](https://otree-testserver.herokuapp.com/demo/Questionnaire/).
 
 ## Adding another page with questions
 Below are simple instructions to include another page (i.e., Survey3.html).
