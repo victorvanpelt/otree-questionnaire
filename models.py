@@ -9,14 +9,15 @@ import json
 author = 'Victor van Pelt'
 
 doc = """
-Basic o-Tree Questionnaire
+Demo of o-Tree Questionnaire
 """
 
 
 class Constants(BaseConstants):
     name_in_url = 'Questionnaire'
     players_per_group = None
-    num_rounds = 1
+    surveys = ['1', '2', '3']
+    num_rounds = len(surveys)
     StandardChoices=[
         [1, 'Disagree strongly'],
         [2, 'Disagree moderately'],
@@ -37,18 +38,24 @@ class Constants(BaseConstants):
     Survey3Choices=StandardChoices
 
 class Subsession(BaseSubsession):
-    pass
-
     def creating_session(self):
-        from .pages import initial_page_sequence
-        aaa = [i.__name__.split('_') for i in initial_page_sequence]
-        page_blocks = [list(group) for key, group in itertools.groupby(aaa, key=lambda x: x[0])]
-        for p in self.get_players():
-            pb = page_blocks.copy()
-            random.shuffle(pb)
-            level1 = list(itertools.chain.from_iterable(pb))
-            level2 = ['_'.join(i) for i in level1]
-            p.participant.vars['initial_page_sequence'] = json.dumps(level2)
+        if self.round_number == 1:
+            for p in self.get_players():
+                round_numbers = list(range(1, Constants.num_rounds + 1))
+                random.shuffle(round_numbers)
+                p.participant.vars['surveys_rounds'] = dict(zip(Constants.surveys, round_numbers))
+                p.participant.vars['num_rounds'] = Constants.num_rounds
+
+    # def creating_session(self):
+    #    from .pages import initial_page_sequence
+    #    aaa = [i.__name__.split('_') for i in initial_page_sequence]
+    #    page_blocks = [list(group) for key, group in itertools.groupby(aaa, key=lambda x: x[0])]
+    #    for p in self.get_players():
+    #        pb = page_blocks.copy()
+    #        random.shuffle(pb)
+    #        level1 = list(itertools.chain.from_iterable(pb))
+    #        level2 = ['_'.join(i) for i in level1]
+    #        p.participant.vars['initial_page_sequence'] = json.dumps(level2)
 
 class Group(BaseGroup):
     pass
